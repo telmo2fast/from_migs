@@ -1,171 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Happy Valentine's 💜</title>
+<meta charset="UTF-8">
+<title>Happy Valentine's 💜</title>
 
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-      font-family: Arial, sans-serif;
-      overflow: hidden;
-    }
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    overflow-x: hidden;
+  }
 
-    .card {
-      background: white;
-      padding: 30px;
-      border-radius: 16px;
-      text-align: center;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-      z-index: 1;
-    }
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+  }
 
-    h1 {
-      color: #a855f7;
-    }
+  .card {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    max-width: 600px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    z-index: 2;
+  }
 
-    button {
-      margin-top: 15px;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 999px;
-      background: #a855f7;
-      color: white;
-      cursor: pointer;
-      font-size: 16px;
-    }
+  h1 {
+    color: #a855f7;
+  }
 
-    .heart {
-      position: absolute;
-      bottom: -20px;
-      width: 20px;
-      height: 20px;
-      background: #a855f7;
-      transform: rotate(45deg);
-      animation: floatUp linear infinite;
-      opacity: 0.8;
-    }
+  button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 999px;
+    background: #a855f7;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s ease;
+  }
 
-    .heart::before,
-    .heart::after {
-      content: '';
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      background: #a855f7;
-      border-radius: 50%;
-    }
+  button:hover {
+    opacity: 0.9;
+  }
 
-    .heart::before {
-      top: -10px;
-      left: 0;
-    }
+  #secretMessage {
+    display: none;
+    margin-top: 15px;
+    font-size: 20px;
+    line-height: 1.5;
+    text-align: center;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-    .heart::after {
-      left: -10px;
-      top: 0;
-    }
+  .heart {
+    position: fixed;
+    bottom: -20px;
+    width: 20px;
+    height: 20px;
+    background: #a855f7;
+    transform: rotate(45deg);
+    animation: floatUp linear infinite;
+    opacity: 0.8;
+    z-index: 1;
+  }
 
-    .emoji {
-      position: absolute;
-      bottom: -20px;
-      font-size: 24px;
-      animation: floatUp linear infinite;
-      opacity: 0.9;
-    }
+  .heart::before,
+  .heart::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #a855f7;
+    border-radius: 50%;
+  }
 
-    @keyframes floatUp {
-      from { transform: translateY(0); opacity: 1; }
-      to { transform: translateY(-120vh); opacity: 0; }
-    }
+  .heart::before {
+    top: -10px;
+    left: 0;
+  }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
+  .heart::after {
+    left: -10px;
+    top: 0;
+  }
+
+  .emoji {
+    position: fixed;
+    bottom: -20px;
+    font-size: 24px;
+    animation: floatUp linear infinite;
+    opacity: 0.9;
+    z-index: 1;
+  }
+
+  @keyframes floatUp {
+    from { transform: translateY(0) rotate(45deg); opacity: 1; }
+    to { transform: translateY(-120vh) rotate(45deg); opacity: 0; }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
 </head>
+
 <body>
-  <div class="card">
-    <h1>For Maria Lucil 💜</h1>
- 
- <p id="secretMessage" style="display:none; margin-top:15px; font-size:20px; line-height:1.5; text-align:center; max-width:90; margin-left:auto; margin-right:auto;">
-Happy Valentine's Day Monkey!!<br>
-Even from miles away, you make my world feel brighter and more alive.<br>
-Just thinking about you brings a warmth I can’t describe,<br>
-like everything is exactly where it’s supposed to be.<br><br>
 
-Every laugh, every message, every little moment we share from afar fills my days with happiness I didn’t know was possible.<br>
-You have become the highlight of my life, the thought I look forward to,<br>
-and the part of my world that makes everything feel lighter, calmer, and full of magic.<br><br>
+<div class="card">
+  <h1>For Maria Lucil 💜</h1>
 
-Today I just want you to know how much you mean to me<br>
-and how grateful I am for you no matter the distance.<br><br>
+  <p id="secretMessage">
+    Happy Valentine's Day Monkey!!<br>
+    Even from miles away, you make my world feel brighter and more alive.<br>
+    Just thinking about you brings a warmth I can’t describe,<br>
+    like everything is exactly where it’s supposed to be.<br><br>
 
-You don’t just look pretty, you think pretty.<br>
-The way you see the world, the way you solve problems, the way your mind works is honestly inspiring.<br>
-You are smart, you are strong, and you are capable of handling everything life throws at you.<br><br>
+    Every laugh, every message, every little moment we share from afar fills my days with happiness I didn’t know was possible.<br>
+    You have become the highlight of my life, the thought I look forward to,<br>
+    and the part of my world that makes everything feel lighter, calmer, and full of magic.<br><br>
 
-All the things that make you who you are, your courage, your kindness, your humor, blow me away every single day. 💜
-</p>
+    Today I just want you to know how much you mean to me<br>
+    and how grateful I am for you no matter the distance.<br><br>
 
+    You don’t just look pretty, you think pretty.<br>
+    The way you see the world, the way you solve problems, the way your mind works is honestly inspiring.<br>
+    You are smart, you are strong, and you are capable of handling everything life throws at you.<br><br>
 
-    <button id="openBtn" onclick="revealMessage()">Open 💌</button>
-    <audio id="myAudio" src="seasons.mp3"></audio>
-  </div>
+    All the things that make you who you are, your courage, your kindness, your humor, blow me away every single day. 💜
+  </p>
 
-  <script>
-    let heartInterval = null;
-    let burstTimeout = null;
+  <button id="openBtn" onclick="revealMessage()">Open 💌</button>
+  <audio id="myAudio" src="seasons.mp3"></audio>
+</div>
 
-    function createHeart() {
-      const isTulip = Math.random() < 0.25;
-      let el;
+<script>
+  let heartInterval = null;
+  let burstTimeout = null;
 
-      if (isTulip) {
-        el = document.createElement('div');
-        el.className = 'emoji';
-        el.textContent = '🌷';
-      } else {
-        el = document.createElement('div');
-        el.className = 'heart';
-      }
+  function createHeart() {
+    const isTulip = Math.random() < 0.25;
+    let el;
 
-      el.style.left = Math.random() * 100 + 'vw';
-      el.style.animationDuration = (4 + Math.random() * 3) + 's';
-      document.body.appendChild(el);
-
-      setTimeout(() => el.remove(), 7000);
+    if (isTulip) {
+      el = document.createElement('div');
+      el.className = 'emoji';
+      el.textContent = '🌷';
+    } else {
+      el = document.createElement('div');
+      el.className = 'heart';
     }
 
-    function revealMessage() {
-      const msg = document.getElementById('secretMessage');
-      const btn = document.getElementById('openBtn');
-      const audio = document.getElementById('myAudio');
+    el.style.left = Math.random() * 100 + 'vw';
+    el.style.animationDuration = (4 + Math.random() * 3) + 's';
+    document.body.appendChild(el);
 
-      msg.style.display = 'block';
-      msg.style.animation = 'fadeIn 1s ease';
-      btn.style.display = 'none';
+    setTimeout(() => el.remove(), 7000);
+  }
 
-      audio.play();
+  function revealMessage() {
+    const msg = document.getElementById('secretMessage');
+    const btn = document.getElementById('openBtn');
+    const audio = document.getElementById('myAudio');
 
-      if (!heartInterval) {
-        heartInterval = setInterval(createHeart, 150); // burst
-        burstTimeout = setTimeout(() => {
-          clearInterval(heartInterval);
-          heartInterval = setInterval(createHeart, 650); // slow
-        }, 2000);
-      }
+    msg.style.display = 'block';
+    msg.style.animation = 'fadeIn 1s ease';
+    btn.style.display = 'none';
+
+    audio.play().catch(() => {});
+
+    if (!heartInterval) {
+      heartInterval = setInterval(createHeart, 150);
+      burstTimeout = setTimeout(() => {
+        clearInterval(heartInterval);
+        heartInterval = setInterval(createHeart, 650);
+      }, 2000);
     }
-  </script>
+  }
+</script>
+
 </body>
 </html>
-
-
-
-
